@@ -1,0 +1,42 @@
+.createNew button{
+  color: #009ade !important;
+  font-size: 14px !important;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: #009ade;
+  transition: all 1s ease;
+  position: relative;
+  border-radius: 4px;
+
+}
+
+.createNew button:hover {
+background: #009ade;
+color: #fff !important;
+}
+
+.filter{
+  margin-bottom: 20px;
+}
+
+.filter button{
+  color: black !important;
+  font-size: 14px !important;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: #009ade;
+  transition: all 1s ease;
+  position: relative;
+  border-radius: 4px;
+  margin-left: 10px !important;
+
+}
+
+.filter button:hover {
+background: #009ade;
+color: #fff !important;
+}
