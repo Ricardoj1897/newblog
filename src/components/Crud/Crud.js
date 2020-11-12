@@ -125,7 +125,7 @@ function Crud() {
         setData(dataNew);
         setModalEdit(false);
         }else{
-          alert("faltan datos en el formulario")
+          alert("Please, complete the form")
         }
       }}
     )
@@ -139,10 +139,10 @@ function Crud() {
   const insertPost = () =>{
     console.log(postSelected)
     if(postSelected===null){
-      alert("Por favor, llena todos los campos")
+      alert("Please, complete the form")
     }else{
     if(postSelected.title==="" || postSelected.category==="" || postSelected.description==="" || postSelected.url===""){
-      alert("Por favor, llena todos los campos")
+      alert("Please, complete the form")
     }else{
     console.log(postSelected)
     var insertNew = postSelected;

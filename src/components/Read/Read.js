@@ -84,7 +84,7 @@ const Read = () => {
     var comsNew = commentNew;
     comsNew.id = myInt;
     if(comsNew.name==="" || comsNew.text===""){
-      alert("Por favor, llena los campos")
+      alert("Please, fill all the fields")
     }else{
     var comnt = datac;
     comnt.push(comsNew);
