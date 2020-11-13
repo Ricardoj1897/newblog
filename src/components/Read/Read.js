@@ -1,18 +1,17 @@
-import React, {useState, useHistory, useLocation, useEffect} from 'react';
+import React, {useState} from 'react';
 import dataJson from '../../Data.json'
 import Box from '@material-ui/core/Box';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter, Switch, Route, Link,useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './Read.css';
 import Button from '@material-ui/core/Button';
 import {Modal,TextField} from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import {ValidatorForm,TextValidator} from 'react-material-ui-form-validator'
+import {Container, Image} from 'react-bootstrap'
 
 document.body.style = 'background: darkcyan;';
 const useStyles = makeStyles((theme) =>({
@@ -25,8 +24,6 @@ const useStyles = makeStyles((theme) =>({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    color: "#fff",
-    fontSize: "32px"
   },
   comments:{
     position: "absolute",
@@ -44,12 +41,21 @@ const useStyles = makeStyles((theme) =>({
     width: "100%"
   },
   card: {
+    maxWidth: 900,
+    align:"right",
+    border: "2px solid",
+    borderColor: "#009ade",
+    backgroundColor:"darkkhaki",
+    marginLeft:"100px",
+    marginTop:"10px",
+  },
+  cardc: {
     maxWidth: 345,
     align:"right",
     border: "2px solid",
     borderColor: "#009ade",
     backgroundColor:"darkkhaki",
-    marginLeft:"10px",
+    marginLeft:"100px",
     marginTop:"10px",
   },
   media: {
@@ -123,37 +129,45 @@ const Read = () => {
  
 return (
   <React.Fragment>
+    <Container fluid="md">
       <div>
-
         {data.map(posting=>{
           console.log(myInt)
           console.log(posting.id)
           if(posting.id!==myInt){
           }else{
             return(
-              <Box className="box_style">
-              <Box>
-                <div className="infoSection">
-                <img  className="banner" src={posting.url}/>
-                <h1 className="header_title">
-                {posting.title}
-                <h4 className="header_description">
-                  {posting.description}
-                </h4>
-                <p className="header_category">
-                  Label: {posting.category}
-                </p>
-                <div className="modalSection">
-                  <button className="modalComment" onClick={()=>abrirCerrarModal()}>Create a new response</button>
-                  <Modal
-                  open={comments}
-                  onClose={abrirCerrarModal}
-                  >
-                    {bodycmt}
-                  </Modal>
-                </div>
-                </h1>
-                </div>
+              <React.Fragment>
+                <Card className={classes.card}>
+                  <Box className="box_style">
+                    <Box className={classes.hero}>
+                      <div className="infoSection">
+                        <Image fluid  className="banner" src={posting.url} />
+                      </div>
+                    </Box>
+                    <div className="mainCon">
+                      <p className="header_title">
+                      {posting.title}
+                        <p className="header_category">
+                          Label: {posting.category}
+                        </p>
+                        
+                      </p>
+                    </div>
+                    <p className="header_description">
+                      {posting.description}
+                    </p>
+                    <div className="modalSection">
+                      <button className="modalComment" onClick={()=>abrirCerrarModal()}>Create a new response</button>
+                        <Modal
+                        open={comments}
+                        onClose={abrirCerrarModal}
+                        >
+                          {bodycmt}
+                        </Modal>
+                    </div>
+                  </Box>
+                </Card>
                 <React.Fragment>
                   {datac.map(com=>{
                     console.log(myInt)
@@ -166,33 +180,32 @@ return (
                       )
                     }else{
                       return(
-                        <Card className={classes.card}>
-                        <CardActionArea>
-                        <CardMedia
-                          className={classes.media}
-                          image="https://www.kindpng.com/picc/m/78-785827_user-profile-avatar-login-account-male-user-icon.png"
-                        />
-                          <CardContent className="textCard">
-                            <Typography gutterBottom variant="h5" component="h2">
-                              {com.name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                              {com.text}
-                            </Typography>
-                          </CardContent>
-                        </CardActionArea>
+                        <Card className={classes.cardc}>
+                          <CardActionArea>
+                          <CardMedia
+                            className={classes.media}
+                            image="https://www.kindpng.com/picc/m/78-785827_user-profile-avatar-login-account-male-user-icon.png"
+                          />
+                            <CardContent className="textCard">
+                              <Typography gutterBottom variant="h5" component="h2">
+                                {com.name}
+                              </Typography>
+                              <Typography variant="body2" color="textSecondary" component="p">
+                                {com.text}
+                              </Typography>
+                            </CardContent>
+                          </CardActionArea>
                       </Card>
                       )
                     }
                   })}
                 </React.Fragment>
-              </Box>
-              </Box>
+              </React.Fragment>
               )
           }
         })}
       </div>
-    
+    </Container>
   </React.Fragment>
 );
 

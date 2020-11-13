@@ -8,20 +8,40 @@
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  margin-left: 10px;
-  margin-top: 10px;
+  margin-right: 10px;
+  margin-top: 70px;
 }
 
 .header_title{
-  margin-left: 10px !important;
-  margin-top: 300px;
+  margin-left: 100px !important;
+  color: black !important;
+  font-size: 24px !important;
+  font-weight: 500;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: transparent;
+  transition: all 1s ease;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: flex;
   font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .header_description{
-  margin-left: 10px !important;
-  font-size: 18px;
-  font-style: normal;
+  margin-left: 100px !important;
+  color: black !important;
+  font-size: 18px !important;
+  font-weight: 500;
+  background: rgba(0,0,0,0);
+  border: 2px solid;
+  border-color: transparent;
+  transition: all 1s ease;
+  position: relative;
+  border-radius: 4px;
+  margin-top: 10px !important;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .header_category{
@@ -29,13 +49,14 @@
   color: black !important;
   font-size: 14px !important;
   font-weight: 500;
-  padding: 0.5em 1.2em;
   background: rgba(0,0,0,0);
   border: 2px solid;
   border-color: black;
   transition: all 1s ease;
   position: relative;
   border-radius: 4px;
+  margin-top: 10px;
+  font-style: italic;
 }
 
 .box_style{
@@ -45,11 +66,14 @@
 
 .infoSection{
   display: flex;
+  margin-bottom: 60px;
 }
 
 .modalSection{
-  margin-left: 220px;;
-  padding-bottom: 20px;
+  margin-left: 100px;
+  justify-content: left;
+  margin-top: 1px;
+  display: flex;
 }
 
 .modalSection button{
@@ -63,8 +87,8 @@
   transition: all 1s ease;
   position: relative;
   border-radius: 4px;
-  margin-left: 10px !important;
-  margin-top: 10px;
+  margin-right: 10px !important;
+  margin-bottom: 10px;
 
 }
 
@@ -76,4 +100,8 @@ color: #fff !important;
 .textCard{
   margin-left: 10px !important;
   margin-top: 1px;
+}
+
+.mainCon{
+  margin-bottom: 10px;
 }
